@@ -1,0 +1,36 @@
+body{
+    background-color: bisque;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+}
+
+header{
+    background-color: rgb(45, 71, 167);
+    color: #ffffff;
+    display:flex;
+    justify-content: center;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+ul{
+    display: flex;
+    gap: 2rem;
+}
+
+.menu li{
+    list-style: none;
+
+}
+
+.menu li a {
+    color: #ffffff;
+    text-decoration: none;
+}
