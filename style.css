@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -132,80 +135,104 @@ nav {
     text-align: left;
   }
 }
+/* ===== SECTION À PROPOS ===== */
 .a-propos {
-  background-color: #fff;
-  padding: 80px 20px;
+  position: relative;
+  padding: 100px 10%;
+  background: linear-gradient(135deg, #f8f8ff 0%, #ecebfa 50%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.a-propos-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Texte à gauche */
+.a-propos-texte {
+  flex: 1;
+}
+
+.a-propos-texte h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #3c2e8a;
+}
+
+.a-propos-texte p {
+  color: #444;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Image à droite */
+.a-propos-image {
+  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: relative;
 }
 
-.a-propos-container {
-  max-width: 900px;
-  text-align: center;
+.a-propos-image img {
+  width: 320px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.a-propos h2 {
-  font-size: 2rem;
-  color: #4a47a3;
-  margin-bottom: 20px;
+.a-propos-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.a-propos p {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 0 auto;
-}
-/* ----- DÉCOR ABSTRAIT ----- */
+/* Décor abstrait */
 .decor {
   position: absolute;
-  top: -100px;
-  left: -150px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle at center, rgba(46, 81, 207, 0.3), transparent 70%);
-  border-radius: 50%;
+  inset: 0;
+  background: linear-gradient(135deg, #f2f0ff 0%, #e6e4fa 40%, #ffffff 100%);
   z-index: 1;
-  filter: blur(40px);
+  overflow: hidden;
 }
 
+.decor::before,
 .decor::after {
   content: "";
   position: absolute;
-  bottom: -150px;
-  right: -100px;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle at center, rgba(110, 98, 200, 0.25), transparent 70%);
-  border-radius: 50%;
-  filter: blur(50px);
-}
-.decor-right {
-  position: absolute;
-  bottom: -100px;
-  right: -150px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle at center, rgba(46, 81, 207, 0.3), transparent 70%);
-  border-radius: 50%;
-  z-index: 1;
-  filter: blur(40px);
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, rgba(74, 71, 163, 0.15), transparent 70%);
+  transform: rotate(25deg);
+  border-radius: 30% 70% 70% 30% / 40% 40% 60% 60%;
+  filter: blur(80px);
 }
 
-.decor-right::after {
-  content: "";
-  position: absolute;
-  bottom: -150px;
+.decor::before {
+  top: -150px;
   left: -100px;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle at center, rgba(110, 98, 200, 0.25), transparent 70%);
-  border-radius: 50%;
-  filter: blur(50px);
 }
+
+.decor::after {
+  bottom: -150px;
+  right: -100px;
+  background: linear-gradient(135deg, rgba(110, 98, 200, 0.2), transparent 70%);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .a-propos-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .a-propos-image img {
+    width: 250px;
+  }
+}
+
 
 /* ===== SECTION COMPÉTENCES ===== */
 .competences {
@@ -278,7 +305,7 @@ nav {
 
 /* Couleurs des fonds par catégorie */
 .design {
-  background: linear-gradient(145deg, #4a47a3, #6d69d5);
+  background: linear-gradient(145deg, #383a6f, #5b5fa1);
 }
 
 .data {
@@ -286,11 +313,11 @@ nav {
 }
 
 .communication {
-  background: linear-gradient(145deg, #5f3dc4, #9e68ff);
+  background: linear-gradient(145deg, #383a6f, #5b5fa1);
 }
 
 .ux {
-  background: linear-gradient(145deg, #7c79d1, #b5b3f0);
+  background: linear-gradient(145deg, #383a6f, #5b5fa1);
 }
 
 /* Responsive */
@@ -310,4 +337,122 @@ nav {
     grid-template-columns: 1fr; /* 1 colonne sur mobile */
   }
 }
+/* ===== SECTION CALL TO ACTION ===== */
+.cta {
+  background: linear-gradient(135deg, #4a47a3, #6d69d5);
+  color: #fff;
+  padding: 100px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.cta-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.1), transparent 70%);
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+.cta-text {
+  z-index: 2;
+}
+
+.cta-text h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.cta-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #f1f1f1;
+  max-width: 500px;
+}
+
+/* ===== FORMULAIRE ===== */
+.cta-form {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.cta-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cta-form label {
+  display: block;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.cta-form input,
+.cta-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.cta-form input:focus,
+.cta-form textarea:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Bouton ===== */
+.cta-button {
+  background-color: #fff;
+  color: #4a47a3;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 35px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #f5f4ff;
+  transform: translateY(-3px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .cta-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .cta-text p {
+    margin: 0 auto;
+  }
+}
