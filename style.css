@@ -1,36 +1,134 @@
-body{
-    background-color: bisque;
-    box-sizing: border-box;
-    margin: 0 auto;
-
+/* ----- RESET ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    background-color: rgb(45, 71, 167);
-    color: #ffffff;
-    display:flex;
-    justify-content: center;
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 1rem;
+/* ===== HEADER ===== */
+header {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-ul{
-    display: flex;
-    gap: 2rem;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.menu li{
-    list-style: none;
-
+.logo p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4a47a3;
 }
 
-.menu li a {
-    color: #ffffff;
-    text-decoration: none;
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #4a47a3;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 50px 20px;
+}
+
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Colonne gauche */
+.hero-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.hero-image img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Colonne droite */
+.hero-text {
+  flex: 1 1 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-text h1 span {
+  color: #4a47a3;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Bouton */
+.hero-button {
+  display: inline-block;
+  background-color: #4a47a3;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #37348c;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 768px) {
+  .hero-text {
+    text-align: left;
+  }
 }
