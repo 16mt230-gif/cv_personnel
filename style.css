@@ -132,3 +132,77 @@ nav {
     text-align: left;
   }
 }
+.a-propos {
+  background-color: #fff;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.a-propos-container {
+  max-width: 900px;
+  text-align: center;
+}
+
+.a-propos h2 {
+  font-size: 2rem;
+  color: #4a47a3;
+  margin-bottom: 20px;
+}
+
+.a-propos p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+/* ----- DÉCOR ABSTRAIT ----- */
+.decor {
+  position: absolute;
+  top: -100px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, rgba(46, 81, 207, 0.3), transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  filter: blur(40px);
+}
+
+.decor::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle at center, rgba(110, 98, 200, 0.25), transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+}
+.decor-right {
+  position: absolute;
+  bottom: -100px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, rgba(46, 81, 207, 0.3), transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  filter: blur(40px);
+}
+
+.decor-right::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -100px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle at center, rgba(110, 98, 200, 0.25), transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+}
